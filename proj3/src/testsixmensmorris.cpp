@@ -11,7 +11,6 @@ TEST(SixMensMorrisBoardTest, DefaultBoardTest){
     EXPECT_EQ(board.UnplacedPieces('W'), 6);
     EXPECT_EQ(board.PlayerAtPosition(0), 'o');
     EXPECT_EQ(board.GameOver(), false);
-    //check
 }
 
 TEST(SixMensMorrisBoardTest, SetBoardTest){
@@ -45,7 +44,6 @@ TEST(SixMensMorrisBoardTest, ResetBoardTest){
     board.ResetBoard();
     std::string a=">RU:6 RC:0  WU:6 WC:0\no---------o---------o      0---1---2\n|         |         |      | 3-4-5 |\n|         |         |      6-7   8-9\n|    o----o----o    |      | A-B-C |\n|    |         |    |      D---E---F\n|    |         |    |        LEGEND\no----o         o----o\n|    |         |    |\n|    |         |    |\n|    o----o----o    |\n|         |         |\n|         |         |\no---------o---------o\n";
     EXPECT_EQ(board.ToString(),a);
-    //check
 }
 
 TEST(SixMensMorrisBoardTest, PlacementTest){
@@ -62,7 +60,6 @@ TEST(SixMensMorrisBoardTest, PlacementTest){
     EXPECT_EQ(board.PlayerTurn(), 'R');
     EXPECT_EQ(board.UnplacedPieces('R'), 5);
     EXPECT_EQ(board.UnplacedPieces('W'), 5);
-    //check
 }
 
 TEST(SixMensMorrisBoardTest, PlacementMillTest){
@@ -79,7 +76,6 @@ TEST(SixMensMorrisBoardTest, PlacementMillTest){
     EXPECT_EQ(board.CanRemove('R'), true);
     board.Remove('R', 3);
     EXPECT_EQ(board.PlayerAtPosition(3), 'o');
-    //check
 }
 
 TEST(SixMensMorrisBoardTest, MoveTest){
@@ -106,7 +102,6 @@ TEST(SixMensMorrisBoardTest, MoveTest){
     board.Move('W', 3, 4);
     EXPECT_EQ(board.PlayerAtPosition(4), 'W');
     EXPECT_EQ(board.PlayerTurn(), 'R');
-    //check
 }
 
 TEST(SixMensMorrisBoardTest, MoveMillTest){
@@ -135,7 +130,6 @@ TEST(SixMensMorrisBoardTest, MoveMillTest){
     board.Remove('W', 8);
     EXPECT_EQ(board.PlayerAtPosition(8), 'o');
     EXPECT_EQ(board.PlayerTurn(), 'R');
-    //check
 }
                                        
 TEST(SixMensMorrisBoardTest, TwoPieceGameOverTest){
@@ -180,7 +174,6 @@ TEST(SixMensMorrisBoardTest, TwoPieceGameOverTest){
     board.Move('W', 9, 15);
     board.Remove('W', 0);
     EXPECT_EQ(board.GameOver(), true);
-    //check, but cannot move R from position 0
 }
 
 TEST(SixMensMorrisBoardTest, NoMoveGameOverTest){
